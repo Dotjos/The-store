@@ -1,6 +1,9 @@
-function Button({ children }) {
+function Button({ children, onClick }) {
   return (
-    <button className="px-2 py-1 lg:px-4  lg:py-2 rounded-md bg-black text-white text-sm font-medium lg:text-xl">
+    <button
+      onClick={onClick}
+      className="px-2.5 py-1.5 lg:px-4 w-max lg:py-2 rounded-md bg-black text-white text-sm font-medium lg:text-xl"
+    >
       {children}
     </button>
   );
