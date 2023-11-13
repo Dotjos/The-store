@@ -11,9 +11,8 @@ function LoginPage() {
   };
   return (
     <div style={backgroundStyle}>
-      <div className="backdrop-blur-sm lg:flex lg:justify-between">
+      <div className="backdrop-blur-sm ">
         <Login />
-        <Logo />
       </div>
     </div>
   );
