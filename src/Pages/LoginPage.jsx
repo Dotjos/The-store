@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Login from "../ui/Login";
+import Login from "../Features/Login/Login";
 import Logo from "../ui/Logo";
-import SignUp from "./SignUp";
+import SignUp from "../Features/SignUp/SignUp";
 
 function LoginPage() {
   const backgroundStyle = {
