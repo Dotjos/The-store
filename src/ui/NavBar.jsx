@@ -18,7 +18,11 @@ function NavBar({ toggleSideBar }) {
     query ? navigate(`/Search/${query}`) : "";
     await refetch();
   }
-
+  const handleKeyPress = async (e) => {
+    if (e.key === "Enter") {
+      await searchOnClick();
+    }
+  };
   function toggleMode() {
     setModeOpen((open) => !open);
   }
@@ -45,6 +49,7 @@ function NavBar({ toggleSideBar }) {
           className="w-full border rounded-xl  px-1.5 py-0.5 md:px-2 md:py-1 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-600"
           value={query}
           onChange={(e) => setQuery(e.currentTarget.value)}
+          onKeyDown={handleKeyPress}
         />
         <div
           className="absolute right-0 px-1 py-1.5 md:px-2 md:py-2  top-0 border  bg-slate-200 roun roun rounded-r-md"
