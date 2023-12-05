@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GoX } from "react-icons/go";
 import { IoIosHome } from "react-icons/io";
 import { LuChevronRight } from "react-icons/lu";
@@ -12,8 +12,8 @@ function SideBar({ onToggle }) {
     signOut();
   };
   return (
-    <div className="transform duration-1000 transition-transform ease-in-out">
-      <div className="grid lg:hidden grid-cols-1 md:w-2/4 w-3/4 bg-slate-900 p-2.5 absolute right-0 top-0 text-slate-200 z-50">
+    <div className="z-50">
+      <div className="grid lg:hidden grid-cols-1 md:w-2/4 w-3/4 bg-slate-900 p-2.5 absolute right-0 top-0 text-slate-200">
         <GoX
           onClick={onToggle}
           className="h-8 w-8 absolute right-1.5 top-1.5"

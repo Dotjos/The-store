@@ -34,7 +34,7 @@ function ProductDetail() {
           height="300"
         />
       </div>
-      <div className="font-medium text-lg flex border-8 rounded-xl p-6 flex-col gap-y-8">
+      <div className="font-medium text-lg flex bg-slate-200 border-8  rounded-xl p-6 flex-col gap-y-8">
         <div>
           <h1>
             <span className="">{data.title}</span>
@@ -56,7 +56,7 @@ function ProductDetail() {
 
         <div className="">
           <button
-            className="rounded-3xl px-2 py-1 border hover:bg-slate-400 bg-slate-200 font-medium text-lg"
+            className="rounded-3xl px-2 py-1 border hover:bg-slate-400 bg-slate-400 font-medium text-lg"
             onClick={() => MoveToCart()}
           >
             Add to Cart

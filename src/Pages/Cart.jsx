@@ -20,7 +20,7 @@ function Cart() {
   }
   if (cartProducts.length === 0) return <EmptyCart />;
   return (
-    <div className="w-full   md:w-3/4">
+    <div className="w-full md:w-3/4 z-0">
       <div className="p-2">
         {cartProducts.map((cartProduct) => (
           <CartEach

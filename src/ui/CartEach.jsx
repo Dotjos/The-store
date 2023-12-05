@@ -29,7 +29,7 @@ function CartEach({ image, quantity, id, price }) {
     dispatch(decreaseQuantity(id));
   }
   return (
-    <div className="rounded-md p-2 border flex justify-between h-28 items-center mt-2 relative ">
+    <div className="rounded-md p-2 border flex justify-between bg-slate-200  h-28 items-center mt-2 relative z-0">
       <div className="flex gap-3 justify-center items-center">
         <img src={image} className="h-16 w-16 lg:w-32 lg:h-20" />
         <div className="">
