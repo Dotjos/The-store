@@ -26,9 +26,9 @@ function Applayout() {
       {isSideBarVisible && <SideBar onToggle={toggleSideBar} />}
       <div className="flex-1 lg:grid lg:grid-cols-3">
         <DesktopSidebar />
-        <div className="lg:col-span-2 p-2 md:flex md:items-center md:justify-center">
+        <main className="lg:col-span-2 p-2 md:flex md:items-center md:justify-center  overflow-scroll">
           <Outlet />
-        </div>
+        </main>
       </div>
       <div className="mt-auto">
         <Footer />

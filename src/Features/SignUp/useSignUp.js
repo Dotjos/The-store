@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 
 export function useSignUp() {
   const { mutate: signUpNew, status } = useMutation({
-    mutationFn: ({ userName, password, email, role, shopId }) =>
-      signUpNewUser(userName, password, email, role, shopId),
+    mutationFn: ({ userName, password, email, shopId }) =>
+      signUpNewUser(userName, password, email, shopId),
     onSuccess: () => {
       toast.success("Check your email for the verification link.");
     },

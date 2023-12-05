@@ -10,11 +10,12 @@ import toast from "react-hot-toast";
 function ProductDetail() {
   const { productId } = useParams();
   const { data, status } = useStoreOne(productId);
+
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
-  const orderPrice = data ? quantity * data.price : null;
+
   function MoveToCart() {
-    dispatch(addToCart({ ...data, quantity, orderPrice }));
+    dispatch(addToCart({ ...data, quantity }));
     toast.success("Successfully added to cart.", { duration: 1000 });
   }
 
@@ -24,16 +25,16 @@ function ProductDetail() {
 
   if (status === "pending") return <BigSpinner />;
   return (
-    <div className="flex flex-col gap-16 lg:w-full h-screen justify-center items-center lg:h-3/4 mt-8 lg:mt-0  md:flex-row">
-      <div className="h-32 lg:w-1/2 flex items-center justify-center md:justify-normal">
+    <div className="flex flex-col gap-10 lg:w-full justify-center p-1 items-center lg:h-3/4   md:flex-row">
+      <div className="outline-none flex items-center justify-center md:justify-normal ">
         <img
           src={data?.images[0]}
           alt="Product Image"
-          width="200px"
-          height="200px"
+          width="300"
+          height="300"
         />
       </div>
-      <div className="font-medium text-lg flex flex-col gap-10">
+      <div className="font-medium text-lg flex border-8 rounded-xl p-6 flex-col gap-y-8">
         <div>
           <h1>
             <span className="">{data.title}</span>
@@ -45,10 +46,7 @@ function ProductDetail() {
             Category:<span>{capitalizeFirstLetter(data.category)}</span>
           </h1>
           <h1 className="">
-            Rating:<span className="mr-3">{data.rating.rate}/5</span>
-            <span className="font-normal text-sm">
-              {data.rating.count}reviews
-            </span>
+            Rating:<span className="mr-3">{data.rating}/5</span>
           </h1>
         </div>
 
@@ -58,7 +56,7 @@ function ProductDetail() {
 
         <div className="">
           <button
-            className="rounded-3xl p-2 border bg-slate-400 hover:bg-slate-200 font-medium text-lg"
+            className="rounded-3xl px-2 py-1 border hover:bg-slate-400 bg-slate-200 font-medium text-lg"
             onClick={() => MoveToCart()}
           >
             Add to Cart

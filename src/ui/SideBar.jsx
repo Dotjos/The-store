@@ -12,12 +12,13 @@ function SideBar({ onToggle }) {
     signOut();
   };
   return (
-    <div className="">
+    <div className="transform duration-1000 transition-transform ease-in-out">
       <div className="grid lg:hidden grid-cols-1 md:w-2/4 w-3/4 bg-slate-900 p-2.5 absolute right-0 top-0 text-slate-200 z-50">
         <GoX
           onClick={onToggle}
           className="h-8 w-8 absolute right-1.5 top-1.5"
         />
+
         <li className=" my-3 py-3 flex items-center space-x-1">
           <IoIosHome className="w-7 h-7" />
           <NavLink to="/Home">

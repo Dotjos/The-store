@@ -11,7 +11,7 @@ function Cart() {
   const navigate = useNavigate();
   const cartProducts = cart.products;
   const totalPrice = cartProducts.reduce((acc, obj) => {
-    return acc + obj.orderPrice;
+    return acc + obj.quantity * obj.price;
   }, 0);
   function orderClicked() {
     dispatch(clearStore());
@@ -28,7 +28,7 @@ function Cart() {
             image={cartProduct.images[0]}
             quantity={cartProduct.quantity}
             id={cartProduct.id}
-            price={cartProduct.orderPrice}
+            price={cartProduct.price}
           />
         ))}
       </div>

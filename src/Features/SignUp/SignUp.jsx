@@ -9,7 +9,6 @@ function SignUp() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [role, setRole] = useState("buyer");
 
   const { signUpNew, status } = useSignUp();
   let isLoading;
@@ -23,20 +22,17 @@ function SignUp() {
   function handleEmail(email) {
     setEmail(email);
   }
-  function handlerole(event) {
-    setRole(event.target.value);
-  }
+
   const handleSignUpSubmit = (e) => {
     e.preventDefault();
     const shopId = generateRandomId();
     signUpNew(
-      { userName, password, email, role, shopId },
+      { userName, password, email, shopId },
       {
         onSettled: () => {
           setEmail("");
           setUserName("");
           setPassword("");
-          setRole("buyer");
         },
       }
     );
@@ -61,19 +57,7 @@ function SignUp() {
         value={password}
         disabled={isLoading}
       />
-      <label className="font-medium lg:text-xl" htmlFor="role">
-        Sign-Up as:
-      </label>
-      <select
-        id="role"
-        name="role"
-        className="p-2 rounded-md outline-0 my-2 lg:text-lg lg:font-medium"
-        value={role}
-        onChange={handlerole}
-      >
-        <option value="seller">Seller</option>
-        <option value="buyer">Buyer</option>
-      </select>
+
       <Button type="submit">
         {isLoading ? <Spinner /> : "Create Account"}
       </Button>
